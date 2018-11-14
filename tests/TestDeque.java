@@ -1,3 +1,5 @@
+/*
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,101 +12,101 @@ public class TestDeque {
 
     @Test
     void numberOfElementsNotLessThanZero() {
-        Deque<String> queue = new Deque<>();
-        assertFalse(queue.size() < 0);
+        Deque<String> deque = new Deque<>();
+        assertFalse(deque.size() < 0);
     }
 
     @Test
     void firstAndLastIsNullWhenZeroElements() {
-        Deque<String> queue = new Deque<>();
-        assertFalse(queue.first != null || queue.last != null);
+        Deque<String> deque = new Deque<>();
+        assertFalse(deque.first != null || deque.last != null);
     }
 
     @Test
     void firstOrLastIsNotNullWhenOneElementInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "One";
-        queue.addLast(item);
-        assertFalse(queue.first == null || queue.last == null);
+        deque.addLast(item);
+        assertFalse(deque.first == null || deque.last == null);
     }
 
     @Test
     void firstNextIsEqualNullWhenOneElementInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "One";
-        queue.addLast(item);
-        assertNull(queue.first.next);
+        deque.addLast(item);
+        assertNull(deque.first.next);
     }
 
     @Test
     void firstIsEqualLastWhenOneElementInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "One";
-        queue.addLast(item);
-        assertEquals(queue.first, queue.last);
+        deque.addLast(item);
+        assertEquals(deque.first, deque.last);
     }
 
     @Test
     void firstOrLastIsNotNullWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addLast(item);
-        assertFalse(queue.first == null || queue.last == null);
+        deque.addFirst(item);
+        deque.addLast(item);
+        assertFalse(deque.first == null || deque.last == null);
     }
 
     @Test
     void firstIsNotEqualLastWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addLast(item);
-        assertNotEquals(queue.first, queue.last);
+        deque.addFirst(item);
+        deque.addLast(item);
+        assertNotEquals(deque.first, deque.last);
     }
 
     @Test
     void firstNextIsNotEqualNullWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addLast(item);
-        assertNotNull(queue.first.next);
+        deque.addFirst(item);
+        deque.addLast(item);
+        assertNotNull(deque.first.next);
     }
 
     @Test
     void lastNextIsEqualNullWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addLast(item);
-        assertNull(queue.last.next);
+        deque.addFirst(item);
+        deque.addLast(item);
+        assertNull(deque.last.next);
     }
 
     @Test
     void internalConsistencyOfInstanceVarLastWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addLast(item);
-        queue.addLast(item);
-        Deque<?>.Node lastNode = queue.first;
+        deque.addFirst(item);
+        deque.addLast(item);
+        deque.addLast(item);
+        Deque<?>.Node lastNode = deque.first;
         while (lastNode.next != null) {
             lastNode = lastNode.next;
         }
-        assertEquals(queue.last, lastNode);
+        assertEquals(deque.last, lastNode);
     }
 
     @Test
     void internalConsistencyOfInstanceVarNWhenSeveralElementsInList() {
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         String item = "Several";
-        queue.addFirst(item);
-        queue.addFirst(item);
-        queue.addLast(item);
+        deque.addFirst(item);
+        deque.addFirst(item);
+        deque.addLast(item);
         int numberOfNodes = 0;
-        for (Deque<?>.Node x = queue.first; x != null && numberOfNodes <= queue.n; x = x.next) {
+        for (Deque<?>.Node x = deque.first; x != null && numberOfNodes <= deque.n; x = x.next) {
             numberOfNodes++;
         }
-        assertEquals(numberOfNodes, queue.n);
+        assertEquals(numberOfNodes, deque.n);
     }
-}
+}*/

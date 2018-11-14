@@ -47,7 +47,7 @@ public class Deque<Item> implements Iterable<Item> {
      * @throws java.lang.IllegalArgumentException if calls with a null argument
      */
     public void addFirst(Item item) {
-
+        if (item == null) throw new IllegalArgumentException("Null argument");
         Node oldfirst = first;
         first = new Node();
         first.item = item;
@@ -63,6 +63,7 @@ public class Deque<Item> implements Iterable<Item> {
      * @throws java.lang.IllegalArgumentException if calls with a null argument
      */
     public void addLast(Item item) {
+        if (item == null) throw new IllegalArgumentException("Null argument");
         Node oldlast = last;
         last = new Node();
         last.item = item;
@@ -136,19 +137,21 @@ public class Deque<Item> implements Iterable<Item> {
      */
     public static void main(String[] args) {
 
-        Deque<String> queue = new Deque<>();
+        Deque<String> deque = new Deque<>();
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             if (item.equals("1"))
-                queue.addFirst(item);
+                deque.addFirst(item);
             else if (item.equals("2"))
-                queue.addLast(item);
-            else if (!queue.isEmpty() && item.equals("3"))
-                queue.removeFirst();
-            else if (!queue.isEmpty() && item.equals("4"))
-                queue.removeLast();
+                deque.addLast(item);
+            else if (!deque.isEmpty() && item.equals("3"))
+                deque.removeFirst();
+            else if (!deque.isEmpty() && item.equals("4"))
+                deque.removeLast();
         }
-        for (String s : queue)
-        StdOut.println(s);
+        for (String s : deque) {
+            StdOut.println(s);
+        }
+        StdOut.println("(" + deque.size() + " left on Deque)");
     }
 }
